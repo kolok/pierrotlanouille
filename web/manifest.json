@@ -1,6 +1,6 @@
 {
-    "name": "counter_mobile_app",
-    "short_name": "counter_mobile_app",
+    "name": "pierrot_la_nouille",
+    "short_name": "pierrot_la_nouille",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.counter_mobile_app">
+    package="com.example.pierrot_la_nouille">
    <application
-        android:label="counter_mobile_app"
+        android:label="pierrot_la_nouille"
         android:name="${applicationName}"
         android:icon="@mipmap/launcher_icon">
         <activity

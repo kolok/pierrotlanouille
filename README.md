@@ -1,4 +1,4 @@
-# counter_mobile_app
+# pierrot_la_nouille
 
 A new Flutter project.
 

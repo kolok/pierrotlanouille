@@ -1,4 +1,4 @@
-package com.example.counter_mobile_app
+package com.example.pierrot_la_nouille
 
 import io.flutter.embedding.android.FlutterActivity
 
