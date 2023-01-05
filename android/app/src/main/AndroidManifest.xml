@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.pierrot_la_nouille">
+    package="com.kolok.pierrot_la_nouille">
    <application
         android:label="pierrot_la_nouille"
         android:name="${applicationName}"

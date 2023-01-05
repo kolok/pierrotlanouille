@@ -1,4 +1,4 @@
-package com.example.pierrot_la_nouille
+package com.kolok.pierrot_la_nouille
 
 import io.flutter.embedding.android.FlutterActivity
 

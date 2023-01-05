@@ -8,7 +8,7 @@
 PRODUCT_NAME = pierrot_la_nouille
 
 // The application's bundle identifier
-PRODUCT_BUNDLE_IDENTIFIER = com.example.counterMobileApp
+PRODUCT_BUNDLE_IDENTIFIER = com.kolok.counterMobileApp
 
 // The copyright displayed in application information
-PRODUCT_COPYRIGHT = Copyright © 2022 com.example. All rights reserved.
+PRODUCT_COPYRIGHT = Copyright © 2022 com.kolok. All rights reserved.
