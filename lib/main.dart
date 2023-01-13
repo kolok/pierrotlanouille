@@ -50,18 +50,26 @@ class _MyHomePageState extends State<MyHomePage> {
           children: [
             IconButton(
               onPressed: _decreaseCounter, 
-              icon: const Icon(Icons.indeterminate_check_box_outlined)
+              icon: const Icon(Icons.indeterminate_check_box_outlined),
+              iconSize: 50,
             ),
             Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const Text('Compteur de nouille'),
-                Text('$_counteur')
+                const Text(
+                  'Ton score',
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
+                ),
+                Text(
+                  '$_counteur',
+                  style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 50),
+                )
               ],
             ),
             IconButton(
               onPressed: _increaseCounter, 
-              icon: const Icon(Icons.add_box_outlined)
+              icon: const Icon(Icons.add_box_outlined),
+              iconSize: 50,
             ),
           ],
         )
