@@ -39,40 +39,83 @@ class _MyHomePageState extends State<MyHomePage> {
       _counteur--;
     });
   }
+  void _resetCounter() {
+    setState(() {
+      _counteur=0;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text(widget.title)),
-      body: Center(
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            IconButton(
-              onPressed: _decreaseCounter, 
-              icon: const Icon(Icons.indeterminate_check_box_outlined),
-              iconSize: 50,
-            ),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                const Text(
-                  'Ton score',
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
-                ),
-                Text(
-                  '$_counteur',
-                  style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 50),
-                )
-              ],
-            ),
-            IconButton(
-              onPressed: _increaseCounter, 
-              icon: const Icon(Icons.add_box_outlined),
-              iconSize: 50,
-            ),
-          ],
-        )
+      body: Container(
+        margin: const EdgeInsets.all(20.0),
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+
+                  const Text(
+                    '         ',
+                  ),
+                  const Text(
+                    'Ton score',
+                    textAlign: TextAlign.center,
+                    overflow: TextOverflow.ellipsis,
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
+                  ),
+                  PopupMenuButton(
+                    // add icon, by default "3 dot" icon
+                    // icon: Icon(Icons.book)
+                    itemBuilder: (context){
+                      return [
+                            const PopupMenuItem<int>(
+                                value: 0,
+                                child: Text("Ré-initialiser le compteur"),
+
+                            ),
+                        ];
+                    },
+                    onSelected:(value){
+                      if(value == 0){
+                        _resetCounter();
+                      }
+                    }
+                  ),
+                ]
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  IconButton(
+                    onPressed: _decreaseCounter, 
+                    icon: const Icon(Icons.indeterminate_check_box_outlined),
+                    iconSize: 50,
+                  ),
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        '$_counteur',
+                        style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 50),
+                      )
+                    ],
+                  ),
+                  IconButton(
+                    onPressed: _increaseCounter, 
+                    icon: const Icon(Icons.add_box_outlined),
+                    iconSize: 50,
+                  ),
+                ],
+              )
+
+            ],
+          ),
+        ),
       ),
       // body: Center(
       //     child: Counter(
