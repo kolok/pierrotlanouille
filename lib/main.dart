@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-// import 'package:shared_preferences/shared_preferences.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 void main() {
   runApp( const MyApp());
@@ -28,22 +28,43 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counteur = 0;
+  int _counter = 0;
 
-  void _increaseCounter() {
+  @override
+  @protected
+  @mustCallSuper
+  void initState() {
+    super.initState();
+    _setInitCounter();
+  }
+
+  Future<void> _setInitCounter() async {
+    final prefs = await SharedPreferences.getInstance();
     setState(() {
-      _counteur++;
+      _counter = prefs.getInt('counter') ?? 0;
     });
   }
-  void _decreaseCounter() {
+
+  Future<void> _increaseCounter() async {
+    final prefs = await SharedPreferences.getInstance();
     setState(() {
-      _counteur--;
+      _counter++;
     });
+    prefs.setInt('counter', _counter);
   }
-  void _resetCounter() {
+  Future<void>  _decreaseCounter() async {
+    final prefs = await SharedPreferences.getInstance();
     setState(() {
-      _counteur=0;
+      _counter--;
     });
+    prefs.setInt('counter', _counter);
+  }
+  Future<void>  _resetCounter() async {
+    final prefs = await SharedPreferences.getInstance();
+    setState(() {
+      _counter=0;
+    });
+    prefs.setInt('counter', 0);
   }
 
   // Future<void>  _decreaseCounter() async {
@@ -109,7 +130,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        '$_counteur',
+                        '$_counter',
                         style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 50),
                       )
                     ],
