@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+// import 'package:shared_preferences/shared_preferences.dart';
 
 void main() {
   runApp( const MyApp());
@@ -45,6 +46,12 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
+  // Future<void>  _decreaseCounter() async {
+  //   final prefs = await SharedPreferences.getInstance();
+  //   final int counter = prefs.getInt('counter') as int;
+  //   prefs.setInt('counter', counter-1);
+  // }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -62,11 +69,13 @@ class _MyHomePageState extends State<MyHomePage> {
                   const Text(
                     '         ',
                   ),
-                  const Text(
-                    'Ton score',
-                    textAlign: TextAlign.center,
-                    overflow: TextOverflow.ellipsis,
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
+                  const Expanded(
+                    child: Text(
+                      'Ton score',
+                      textAlign: TextAlign.center,
+                      overflow: TextOverflow.ellipsis,
+                      style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
+                    )
                   ),
                   PopupMenuButton(
                     // add icon, by default "3 dot" icon
