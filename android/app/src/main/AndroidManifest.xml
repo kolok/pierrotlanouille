@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.kolok.pierrot_la_nouille">
    <application
-        android:label="pierrot_la_nouille"
+        android:label="Pierrot la nouille"
         android:name="${applicationName}"
         android:icon="@mipmap/launcher_icon">
         <activity

@@ -29,6 +29,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
+  final String _title = 'Ton score';
 
   @override
   @protected
@@ -67,12 +68,6 @@ class _MyHomePageState extends State<MyHomePage> {
     prefs.setInt('counter', 0);
   }
 
-  // Future<void>  _decreaseCounter() async {
-  //   final prefs = await SharedPreferences.getInstance();
-  //   final int counter = prefs.getInt('counter') as int;
-  //   prefs.setInt('counter', counter-1);
-  // }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -90,12 +85,12 @@ class _MyHomePageState extends State<MyHomePage> {
                   const Text(
                     '         ',
                   ),
-                  const Expanded(
+                  Expanded(
                     child: Text(
-                      'Ton score',
+                      _title,
                       textAlign: TextAlign.center,
                       overflow: TextOverflow.ellipsis,
-                      style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
+                      style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
                     )
                   ),
                   PopupMenuButton(
